@@ -7,7 +7,7 @@ var pucastats = {
             return this;
         }
 
-        if ( window.location.href.toLowerCase().indexOf('pucatrade.com/trades/past/sent') === -1 ) {
+        if ( window.location.href.toLowerCase().indexOf('pucatrade.com/trades/past') === -1 ) {
             alert('Hey!  This isn\'t the History section!');
             return this;
         }
