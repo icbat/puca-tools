@@ -12,7 +12,7 @@ var pucastats = {
             return this;
         }
 
-        alert('Things seem to be working!');
+        alert($('div.explain-text'));
         return this;
     }
 }.setup();
