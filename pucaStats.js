@@ -1,4 +1,4 @@
-var pucastats {
+var pucastats = {
 
     // Responsible for initial loading and setup
     setup: function () {
