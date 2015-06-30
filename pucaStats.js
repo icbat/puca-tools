@@ -12,6 +12,7 @@ var pucastats {
             return this;
         }
 
+        alert('Things seem to be working!');
         return this;
     }
 }.setup();
