@@ -7,7 +7,7 @@ A collection of tools I've built for my own Puca use.
 
 This is a tool I use to build a CSV to Mail Merge in to label software to easily print a bunch of addresses.
 
-### How to use it
+#### How to use it
 
 1. Copy and paste the javascript in to your browser's console (`Ctrl Shift I` in Chrome, or `Ctrl Shift K` in Firefox)
 2. Execute the code, which should append further instructions to the header area of the page
