@@ -1,4 +1,9 @@
 {
-  "name" : "puca-tools",
-  "version" : "0.0.0"
+  "name": "puca-tools",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/icbat/puca-tools",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  }
 }
