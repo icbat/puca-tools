@@ -10,9 +10,7 @@ This is a tool I use to build a CSV to Mail Merge in to label software to easily
 #### How to use it
 
 Make a new bookmark and paste this into the url:
-[code]
-javascript:(function () { $('<script>').attr('src', 'https://icbat.github.io/puca-tools/puca-addresses.js?'+(new Date()).getTime()).appendTo('head'); })();
-[/code]
+```javascript:(function () { $('<script>').attr('src', 'https://icbat.github.io/puca-tools/puca-addresses.js?'+(new Date()).getTime()).appendTo('head'); })();```
 
 When you are on the sending page, click the bookmark.
 
