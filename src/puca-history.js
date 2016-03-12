@@ -1,4 +1,4 @@
-var pucastats = {
+var module_history = {
 
     // Responsible for initial loading and setup
     setup: function () {
@@ -15,4 +15,4 @@ var pucastats = {
         alert(JSON.stringify($('div.explain-text')));
         return this;
     }
-}.setup();
+};
