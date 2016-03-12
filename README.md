@@ -12,7 +12,7 @@ This is a tool I use to build a CSV to Mail Merge in to label software to easily
 Make a new bookmark and paste this into the url:
 
 ```
-(function () {
+javascript:(function () {
 $('<script>').attr('src', 'https://icbat.github.io/puca-tools/puca-addresses.js?'+(new Date()).getTime()).appendTo('head');
 module_addresses.init();
 })()
