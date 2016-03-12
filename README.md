@@ -1,5 +1,5 @@
 # puca-tools
-[![Build Status](https://travis-ci.org/icbat/puca-stats.svg?branch=master)](https://travis-ci.org/icbat/puca-stats)
+[![Build Status](https://travis-ci.org/icbat/puca-tools.svg?branch=master)](https://travis-ci.org/icbat/puca-tools)
 
 A collection of tools I've built for my own Puca use.
 
