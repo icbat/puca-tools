@@ -1,15 +1,10 @@
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
-gulp.task('scripts', function() {
-  return gulp.src('./lib/*.js')
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('./dist/'));
-});
+var files = ['src/puca-addresses.js', 'src/puca-history.js', 'src/puca-piping.js',];
+
 gulp.task('build', function() {
-  return gulp.src(['src/*.js'])
+  return gulp.src(files)
     .pipe(concat('puca-tools.js'))
-    // .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });
