@@ -1,5 +1,5 @@
 var module_addresses = {
-  run: function(){
+  init: function(){
     var addresses = $('tr:has(.btn-primary) .address_text');
 
     var messages = this.buildMessages(addresses);
@@ -56,5 +56,3 @@ var module_addresses = {
       dumpingGround.before(csv);
   }
 };
-
-module_addresses.run();
