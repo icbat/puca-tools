@@ -56,5 +56,3 @@ var module_addresses = {
       dumpingGround.before(csv);
   }
 };
-
-module_addresses.init();
