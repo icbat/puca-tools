@@ -14,7 +14,6 @@ Make a new bookmark and paste this into the url:
 ```
 javascript:(function () {
 $('<script>').attr('src', 'https://icbat.github.io/puca-tools/puca-addresses.js?'+(new Date()).getTime()).appendTo('head');
-module_addresses.init();
 })()
 ```
 
