@@ -13,7 +13,7 @@ Make a new bookmark and paste this into the url:
 
 ```
 javascript:(function () {
-$('<script>').attr('src', 'https://icbat.github.io/puca-tools/src/puca-addresses.js?'+(new Date()).getTime()).appendTo('head');
+$('<script>').attr('src', 'https://icbat.github.io/puca-tools/dist/puca-tools.js?'+(new Date()).getTime()).appendTo('head');
 })()
 ```
 
