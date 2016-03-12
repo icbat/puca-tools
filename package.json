@@ -9,5 +9,8 @@
     "gulp-concat": "^2.6.0",
     "jasmine": "^2.4.1",
     "karma": "^0.13.22"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   }
 }
