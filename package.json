@@ -4,6 +4,8 @@
   "license": "MIT",
   "repository": "https://github.com/icbat/puca-tools",
   "devDependencies": {
-    "bower": "^1.7.7"
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0"
   }
 }
