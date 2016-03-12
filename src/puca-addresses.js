@@ -1,9 +1,11 @@
-var addresses = $('tr:has(.btn-primary) .address_text');
+function run(){
+  var addresses = $('tr:has(.btn-primary) .address_text');
 
-var messages = buildMessages(addresses);
-messages = removeDuplicates(messages);
-console.log('found', messages.length, 'people to send to');
-addToDisplay(messages);
+  var messages = buildMessages(addresses);
+  messages = removeDuplicates(messages);
+  console.log('found', messages.length, 'people to send to');
+  addToDisplay(messages);
+}
 
 function buildMessages(addresses) {
     var messages = [];
@@ -52,3 +54,5 @@ function addToDisplay(messages) {
     csv += "</div>";
     dumpingGround.before(csv);
 }
+
+run();
