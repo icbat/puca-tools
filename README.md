@@ -9,9 +9,12 @@ This is a tool I use to build a CSV to Mail Merge in to label software to easily
 
 #### How to use it
 
-1. Copy and paste the javascript in to your browser's console (`Ctrl Shift I` in Chrome, or `Ctrl Shift K` in Firefox)
-2. Execute the code, which should append further instructions to the header area of the page
-3. Wonder why this isn't easier to run, figure it out, and submit a pull request to fix it ;)
+Make a new bookmark and paste this into the url:
+[code]
+javascript:(function () { $('<script>').attr('src', 'https://icbat.github.io/puca-tools/puca-addresses.js?'+(new Date()).getTime()).appendTo('head'); })();
+[/code]
+
+When you are on the sending page, click the bookmark.
 
 ## puca-stats
 
