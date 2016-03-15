@@ -31,6 +31,6 @@ describe("removeDuplicates", function() {
 
     var toExecute = function() {module_addresses.removeDuplicates(input);};
 
-    expect(toExecute).toThrow(new TypeError("array.filter is not a function"));
+    expect(toExecute).toThrow();
   });
 });
