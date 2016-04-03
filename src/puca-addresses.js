@@ -1,17 +1,23 @@
 var module_addresses = {
   init: function(){
     var addresses = $('tr:has(.btn-primary) .address_text');
+    var older_addresses = $('tr:not(.btn-primary) .address_text');
 
+    this.addFromAddresses(addresses, "packages to send");
+    this.addFromAddresses(older_addresses, "all packages including sent");
+  },
+
+  addFromAddresses: function (addresses, message) {
     var messages = this.buildMessages(addresses);
     messages = this.removeDuplicates(messages);
-    console.log('found', messages.length, 'people to send to');
-    this.addToDisplay(messages);
+    this.addToDisplay(messages, message);
   },
 
   buildMessages: function (addresses) {
       var messages = [];
       for (i=0; i < addresses.size(); i++) {
           var address = $(addresses[i]).html();
+          console.log(addresses[i], address);
           address = this.normalizeAddress(address);
           var message = address.replace(/<br>/g, '|');
           messages.push(message);
@@ -40,10 +46,10 @@ var module_addresses = {
       });
   },
 
-  addToDisplay: function (messages) {
+  addToDisplay: function (messages, message) {
       var dumpingGround = $('.headerbar');
       console.log('adding messages to element', dumpingGround);
-      dumpingGround.before("<div><h1>Found " + messages.length + " unique packages</h1></div>");
+      dumpingGround.before("<div><h1>Found " + messages.length + " " + message + " </h1></div>");
       dumpingGround.before("<div>Copy this to a new file, save as CSV, and use the pipe character ('|') as the column delimiter.</div>");
       var csv = "<div>";
 
