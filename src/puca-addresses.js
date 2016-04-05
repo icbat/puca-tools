@@ -20,16 +20,11 @@ var module_addresses = {
   },
 
   buildMessage: function (address) {
-    address = this.normalizeAddress(address);
+    var lineBreakCount = (address.match(/<br>/g) || []).length;
+    if (lineBreakCount < 4) {
+        address = this.addBlankAddressLine2(address);
+    }
     return address.replace(/<br>/g, '|');
-  },
-
-  normalizeAddress: function (address) {
-      var lineBreakCount = (address.match(/<br>/g) || []).length;
-      if (lineBreakCount < 4) {
-          address = this.addBlankAddressLine2(address);
-      }
-      return address;
   },
 
   addBlankAddressLine2: function (text) {
