@@ -4,11 +4,11 @@ var module_addresses = {
     // Slice to remove the table header row
     var older_rows = $('tr:not(.btn-primary):not(th)').slice(1);
 
-    this.addFromAddresses(rows, "packages to send");
-    this.addFromAddresses(older_rows, "all packages including sent");
+    this.addAddressesToScreen(rows, "packages to send");
+    this.addAddressesToScreen(older_rows, "all packages including sent");
   },
 
-  addFromAddresses: function (rows, message) {
+  addAddressesToScreen: function (rows, message) {
     var messages = [];
     for (i=0; i < rows.size(); i++) {
         var username = $('.trader', rows[i])[0].childNodes[0].nodeValue.trim();
