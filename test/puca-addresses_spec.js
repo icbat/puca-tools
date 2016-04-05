@@ -92,5 +92,15 @@ describe("send a card page", function() {
 
       expect(actual).toEqual(expected);
     });
+
+    it("given a username, appends it", function() {
+      var expected = "a|b|c|d||icbat";
+      var input = "a<br>b<br>c<br>d<br>";
+      var username = "icbat";
+
+      var actual = module_addresses.buildMessage(input, username);
+
+      expect(actual).toEqual(expected);
+    });
   });
 });

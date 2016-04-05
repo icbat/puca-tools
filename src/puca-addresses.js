@@ -10,20 +10,25 @@ var module_addresses = {
   addFromAddresses: function (rows, message) {
     var messages = [];
     for (i=0; i < rows.size(); i++) {
-        var address = $('.address_text', rows).html();
-        messages.push(this.buildMessage(address));
+        var username = $('.trader', rows[i])[0].childNodes[0].nodeValue.trim();
+        var address = $('.address_text', rows[i]).html();
+        messages.push(this.buildMessage(address, username));
     }
 
     messages = this.removeDuplicates(messages);
     this.addToDisplay(messages, message);
   },
 
-  buildMessage: function (address) {
+  buildMessage: function (address, username) {
     var lineBreakCount = (address.match(/<br>/g) || []).length;
     if (lineBreakCount < 4) {
         address = this.addBlankAddressLine2(address);
     }
-    return address.replace(/<br>/g, '|');
+    var output = address.replace(/<br>/g, '|');
+    if (!!username) {
+      output += "|" + username;
+    }
+    return output;
   },
 
   addBlankAddressLine2: function (text) {
