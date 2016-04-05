@@ -9,9 +9,8 @@ var module_addresses = {
 
   addFromAddresses: function (rows, message) {
     var messages = [];
-    var addresses = $('.address_text', rows);
-    for (i=0; i < addresses.size(); i++) {
-        var address = $(addresses[i]).html();
+    for (i=0; i < rows.size(); i++) {
+        var address = $('.address_text', rows).html();
         messages.push(this.buildMessage(address));
     }
 
