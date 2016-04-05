@@ -45,19 +45,19 @@ var module_addresses = {
       });
   },
 
-  addToDisplay: function (messages, message) {
+  addToDisplay: function (csv, displayMessage) {
       var dumpingGround = $('.headerbar');
-      console.log('adding messages to element', dumpingGround);
-      dumpingGround.before("<div><h1>Found " + messages.length + " " + message + " </h1></div>");
+      console.log('adding csv to element', dumpingGround);
+      dumpingGround.before("<div><h1>Found " + csv.length + " " + displayMessage + " </h1></div>");
       dumpingGround.before("<div>Copy this to a new file, save as CSV, and use the pipe character ('|') as the column delimiter.</div>");
-      var csv = "<div>";
+      var output = "<div>";
 
-      for (i=0; i < messages.length; i++) {
-          csv += messages[i];
-          csv += "<br/>";
+      for (i=0; i < csv.length; i++) {
+          output += csv[i];
+          output += "<br/>";
       }
 
-      csv += "</div>";
-      dumpingGround.before(csv);
+      output += "</div>";
+      dumpingGround.before(output);
   }
 };
