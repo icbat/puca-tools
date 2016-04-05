@@ -5,7 +5,7 @@ var module_addresses = {
     var older_rows = $('tr:not(.btn-primary):not(th)').slice(1);
 
     this.addAddressesToScreen(rows, "packages to send");
-    this.addAddressesToScreen(older_rows, "packages including those already sent");
+    this.addAddressesToScreen(older_rows, "all packages including sent");
   },
 
   addAddressesToScreen: function (rows, message) {
