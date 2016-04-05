@@ -1,20 +1,21 @@
 var module_addresses = {
   init: function(){
-    var addresses = $('tr:has(.btn-primary) .address_text');
-    var older_addresses = $('tr:not(.btn-primary) .address_text');
+    var rows = $('tr:has(.btn-primary)');
+    var older_rows = $('tr:not(.btn-primary)');
 
-    this.addFromAddresses(addresses, "packages to send");
-    this.addFromAddresses(older_addresses, "all packages including sent");
+    this.addFromAddresses(rows, "packages to send");
+    this.addFromAddresses(older_rows, "all packages including sent");
   },
 
-  addFromAddresses: function (addresses, message) {
-    var messages = this.buildMessages(addresses);
+  addFromAddresses: function (rows, message) {
+    var messages = this.buildMessages(rows);
     messages = this.removeDuplicates(messages);
     this.addToDisplay(messages, message);
   },
 
-  buildMessages: function (addresses) {
+  buildMessages: function (rows) {
       var messages = [];
+      var addresses = $('.address_text', rows);
       for (i=0; i < addresses.size(); i++) {
           var address = $(addresses[i]).html();
           console.log(addresses[i], address);
