@@ -8,22 +8,20 @@ var module_addresses = {
   },
 
   addFromAddresses: function (rows, message) {
-    var messages = this.buildMessages(rows);
+    var messages = [];
+    var addresses = $('.address_text', rows);
+    for (i=0; i < addresses.size(); i++) {
+        var address = $(addresses[i]).html();
+        messages.push(this.buildMessage(address));
+    }
+
     messages = this.removeDuplicates(messages);
     this.addToDisplay(messages, message);
   },
 
-  buildMessages: function (rows) {
-      var messages = [];
-      var addresses = $('.address_text', rows);
-      for (i=0; i < addresses.size(); i++) {
-          var address = $(addresses[i]).html();
-          console.log(addresses[i], address);
-          address = this.normalizeAddress(address);
-          var message = address.replace(/<br>/g, '|');
-          messages.push(message);
-      }
-      return messages;
+  buildMessage: function (address) {
+    address = this.normalizeAddress(address);
+    return address.replace(/<br>/g, '|');
   },
 
   normalizeAddress: function (address) {

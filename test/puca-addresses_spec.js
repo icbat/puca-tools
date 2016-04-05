@@ -93,4 +93,33 @@ describe("send a card page", function() {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe("buildMessage", function() {
+    it("does nothing if there's 4 lines", function() {
+      var expected = "a|b|c|d|";
+      var input = "a<br>b<br>c<br>d<br>";
+
+      var actual = module_addresses.buildMessage(input);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it("adds a blank line if there's 3 lines", function() {
+      var expected = "a|b||d|";
+      var input = "a<br>b<br>d<br>";
+
+      var actual = module_addresses.buildMessage(input);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it("characterize that it adds a blank line if there's less than 3 lines", function() {
+      var expected = "a||";
+      var input = "a<br>";
+
+      var actual = module_addresses.buildMessage(input);
+
+      expect(actual).toEqual(expected);
+    });
+  });
 });
