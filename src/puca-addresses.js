@@ -1,7 +1,8 @@
 var module_addresses = {
   init: function(){
     var rows = $('tr:has(.btn-primary)');
-    var older_rows = $('tr:not(.btn-primary)');
+    // Slice to remove the table header row
+    var older_rows = $('tr:not(.btn-primary):not(th)').slice(1);
 
     this.addFromAddresses(rows, "packages to send");
     this.addFromAddresses(older_rows, "all packages including sent");
